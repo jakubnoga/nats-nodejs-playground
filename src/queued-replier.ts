@@ -13,18 +13,21 @@ async function main(): Promise<void> {
   processStatuses(nc.status());
 
   // subscription is an instance of AsyncIterable (https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for-await...of)
-  processSubscription(nc.subscribe('hi.>'));
+  processSubscription(nc.subscribe('requests.>', {
+    queue: "GOLEJGA:---D"
+  }));
 
   await nc.closed();
 }
 
 async function processSubscription(subscription: Subscription) {
   for await (const msg of subscription) {
+    const value = sc.decode(msg.data);
     console.log(
-      `[MESSAGE]: [${subscription.getSubject()}][${msg.subject}]: ${sc.decode(
-        msg.data
-      )}`
+      `[REQUEST]: [${subscription.getSubject()}][${msg.subject}]: ${value}`
     );
+
+    msg.respond(sc.encode('' + Math.pow(Number(value), 2)));
   }
 }
 
@@ -35,3 +38,4 @@ async function processStatuses(events: AsyncIterable<Status>) {
 }
 
 main();
+

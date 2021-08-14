@@ -1,6 +1,7 @@
 # nats-nodejs-playground
 Strongly inspired by [how-to-nats](https://github.com/gitarte/how-to-nats)
 
+I skipped implementation of `cluster-publisher` and `cluster-subscriber` as it only adds printing events to stdout, which is already implemented in other examples.
 # Nats setup
 ## Docker
 ```bash

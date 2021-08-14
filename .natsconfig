@@ -1,0 +1,3 @@
+# config to achieve "Slow Customer" faster;
+max_pending: 1kb
+max_payload: 512
