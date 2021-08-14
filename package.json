@@ -1,0 +1,39 @@
+{
+  "name": "nats-nodejs-playground",
+  "version": "1.0.0",
+  "description": "Nats node.js client examples",
+  "main": "/dist/index.js",
+  "scripts": {
+    "start": "ts-node-dev",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakubnoga/nats-nodejs-playground.git"
+  },
+  "keywords": [
+    "nats",
+    "nodejs",
+    "typescript",
+    "distributed-systems",
+    "messaging",
+    "cloud",
+    "nats-server",
+    "microservices",
+    "message-queue"
+  ],
+  "author": "Jakub Noga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jakubnoga/nats-nodejs-playground/issues"
+  },
+  "homepage": "https://github.com/jakubnoga/nats-nodejs-playground#readme",
+  "dependencies": {
+    "@types/node": "^16.6.1",
+    "nats": "^2.1.0",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "ts-node-dev": "^1.1.8"
+  }
+}

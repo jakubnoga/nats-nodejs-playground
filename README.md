@@ -25,3 +25,12 @@ Expand-Archive .\nats-server-v2.3.4-windows-amd64.zip -DestinationPath .\
 .\nats-server -p 5222 -cluster nats://localhost:5248 -routes nats://localhost:4248 
 .\nats-server -p 6222 -cluster nats://localhost:6248 -routes nats://localhost:4248 
 ```
+
+# Run examples
+```powershell
+npm i
+
+# npm run start -- <script-path>
+# i.e.
+npm run start -- ./src/publisher.ts
+```
