@@ -1,4 +1,4 @@
-import { connect, StringCodec } from "nats";
+import { connect, StringCodec } from 'nats';
 
 const port = Number(process.env.NATS_SERVER_PORT_1) ?? 4222;
 
@@ -14,11 +14,14 @@ async function main(): Promise<void> {
   let i = -1;
 
   setInterval(() => {
-    nc.publish(`hi.${++i}`, sc.encode(`Message number ${i}`))
-    console.log(`Message number ${i}`)
-  }, interval)
+    i++;
+    const message = `Message number ${i}`;
+    console.log(message);
+    const subject = `hi.${i}`;
+    nc.publish(subject, sc.encode(message));
+  }, interval);
 
   await nc.closed();
 }
 
-main()
+main();
